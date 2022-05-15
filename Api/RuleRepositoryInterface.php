@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Onestic\AcmeShipping\Api;
 
@@ -7,6 +8,9 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Onestic\AcmeShipping\Api\Data\RuleInterface;
 use Onestic\AcmeShipping\Api\Data\RuleSearchResultsInterface;
 
+/**
+ * CRUD operations for Acme Shipping Rule data model
+ */
 interface RuleRepositoryInterface
 {
     /**

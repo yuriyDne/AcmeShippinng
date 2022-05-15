@@ -1,15 +1,13 @@
 <?php
-/**
- * Copyright ©  All rights reserved.
- * See COPYING.txt for license details.
- */
 declare(strict_types=1);
 
 namespace Onestic\AcmeShipping\Api\Data;
 
+/**
+ * Shipping rules data model
+ */
 interface RuleInterface
 {
-
     const DESTINATION_COUNTRY = 'destination_country';
     const WEBSITE_CODE = 'website_code';
     const DESTINATION_POSTCODE = 'destination_postcode';
@@ -18,17 +16,10 @@ interface RuleInterface
     const CARRIER_CODE = 'carrier_code';
     const METHOD_NAME = 'method_name';
 
-
     /**
      * @return int|null
      */
     public function getEntityId(): ?int;
-
-    /**
-     * Get entity_id
-     * @return string
-     */
-    public function setEntityId(int $entityId);
 
     /**
      * Get carrier_code
