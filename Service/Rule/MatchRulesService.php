@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Onestic\AcmeShipping\Service\Rule;
 
@@ -42,6 +43,11 @@ class MatchRulesService implements MatchRulesServiceInterface
         $this->storeManager = $storeManager;
     }
 
+    /**
+     * @param RateRequest $request
+     * @return RuleSearchResultsInterface
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     public function execute(RateRequest $request): RuleSearchResultsInterface
     {
         $websiteCode = $this->storeManager->getWebsite($request->getWebsiteId())->getCode();

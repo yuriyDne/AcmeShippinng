@@ -52,6 +52,10 @@ class CollectRatesService implements CollectRatesServiceInterface
         $this->config = $config;
     }
 
+    /**
+     * @param RateRequest $request
+     * @return Result
+     */
     public function execute(RateRequest $request): Result
     {
         $customRulesResult = $this->matchRulesService->execute($request);

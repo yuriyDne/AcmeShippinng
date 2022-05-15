@@ -15,6 +15,9 @@ Provides shipping rules search result by `Magento\Quote\Model\Quote\Address\Rate
 #### Onestic\AcmeShipping\Api\Service\CollectRatesServiceInterface
 Provides shipping methods search result by `Magento\Quote\Model\Quote\Address\RateRequest`
 
+#### Onestic\AcmeShipping\Api\Service\Rule\SaveRulesServiceInterface (Not implemented yet)
+Save array of Acme Shipping rules data model to storage
+
 ### Repositories
 #### Onestic\AcmeShipping\Api\RuleRepositoryInterface
 Provides CRUD operations with shipping rules  

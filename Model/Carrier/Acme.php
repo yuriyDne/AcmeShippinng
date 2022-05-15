@@ -6,11 +6,9 @@ namespace Onestic\AcmeShipping\Model\Carrier;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Quote\Model\Quote\Address\RateRequest;
 use Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory;
-use Magento\Quote\Model\Quote\Address\RateResult\MethodFactory;
 use Magento\Shipping\Model\Carrier\AbstractCarrier;
 use Magento\Shipping\Model\Carrier\CarrierInterface;
 use Magento\Shipping\Model\Rate\Result;
-use Magento\Shipping\Model\Rate\ResultFactory;
 use Onestic\AcmeShipping\Api\Data\ConfigInterface;
 use Onestic\AcmeShipping\Api\Service\CollectRatesServiceInterface;
 use Psr\Log\LoggerInterface;
@@ -59,7 +57,6 @@ class Acme extends AbstractCarrier implements CarrierInterface
         $this->config = $config;
     }
 
-
     /**
      * Custom Shipping Rates Collector
      *
@@ -72,7 +69,16 @@ class Acme extends AbstractCarrier implements CarrierInterface
             return false;
         }
 
-        return $this->collectRatesService->execute($request);
+        try {
+            return $this->collectRatesService->execute($request);
+        } catch (\Exception $e) {
+            $this->_logger->error(
+                'Acme_Shipping Collect Rates Error: ' . $e->getMessage(),
+                [
+                    'exception' => $e,
+                ]
+            );
+        }
     }
 
     /**
