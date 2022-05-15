@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table comment="acme_shipping_rules Table" engine="innodb" name="acme_shipping_rules" resource="default">
+        <column comment="Entity Id" identity="true" name="entity_id" nullable="false" padding="6" unsigned="true" xsi:type="int"/>
+        <constraint referenceId="PRIMARY" xsi:type="primary">
+            <column name="entity_id"/>
+        </constraint>
+        <column xsi:type="varchar" name="carrier_code" nullable="false" length="32" comment="Carrier Code"/>
+        <column xsi:type="varchar" name="destination_country" nullable="false" length="2" comment="Destination Country"/>
+        <column xsi:type="varchar" name="destination_postcode" nullable="true" length="12" comment="Destination Postcode"/>
+        <column xsi:type="varchar" name="website_code" nullable="true" length="32" comment="Website Code"/>
+        <column xsi:type="float" name="price" unsigned="true" nullable="false" comment="Price"/>
+
+        <!-- for future usage - customize method name in case if multiple rules available -->
+        <column xsi:type="varchar" name="method_name" nullable="true" length="50" comment="Price"/>
+
+        <constraint xsi:type="foreign" referenceId="ACME_SHIPPING_RULES_STORE_WEBSITE_CODE" table="acme_shipping_rules"
+                    column="website_code" referenceTable="store_website"
+                    referenceColumn="code" onDelete="CASCADE"/>
+    </table>
+</schema>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Onestic\AcmeShipping\Api\Service\CollectRatesServiceInterface" type="Onestic\AcmeShipping\Service\CollectRatesService"/>
+    <preference for="Onestic\AcmeShipping\Api\RuleRepositoryInterface" type="Onestic\AcmeShipping\Model\RuleRepository"/>
+    <preference for="Onestic\AcmeShipping\Api\Data\RuleInterface" type="Onestic\AcmeShipping\Model\Rule"/>
+    <preference for="Onestic\AcmeShipping\Api\Data\RuleSearchResultsInterface" type="Onestic\AcmeShipping\Model\Api\SearchResult"/>
+    <preference for="Onestic\AcmeShipping\Api\Service\Rule\MatchRulesServiceInterface" type="Onestic\AcmeShipping\Service\Rule\MatchRulesService"/>
+    <preference for="Onestic\AcmeShipping\Api\Data\ConfigInterface" type="Onestic\AcmeShipping\Model\Config"/>
+
+    <type name="Onestic\AcmeShipping\Model\Config">
+        <arguments>
+            <argument name="carrierCode" xsi:type="string">acmeshipping</argument>
+        </arguments>
+    </type>
+    <type name="Onestic\AcmeShipping\Model\Carrier\Acme">
+        <arguments>
+            <argument name="code" xsi:type="string">acmeshipping</argument>
+        </arguments>
+    </type>
+
+</config>

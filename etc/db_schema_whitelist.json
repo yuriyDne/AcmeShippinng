@@ -1,0 +1,17 @@
+{
+    "acme_shipping_rules": {
+        "column": {
+            "entity_id": true,
+            "carrier_code": true,
+            "destination_country": true,
+            "destination_postcode": true,
+            "website_code": true,
+            "price": true,
+            "method_name": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "ACME_SHIPPING_RULES_WEBSITE_CODE_STORE_WEBSITE_CODE": true
+        }
+    }
+}
