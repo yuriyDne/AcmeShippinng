@@ -6,6 +6,7 @@
     <preference for="Onestic\AcmeShipping\Api\Data\RuleSearchResultsInterface" type="Onestic\AcmeShipping\Model\Api\SearchResult"/>
     <preference for="Onestic\AcmeShipping\Api\Service\Rule\MatchRulesServiceInterface" type="Onestic\AcmeShipping\Service\Rule\MatchRulesService"/>
     <preference for="Onestic\AcmeShipping\Api\Data\ConfigInterface" type="Onestic\AcmeShipping\Model\Config"/>
+    <preference for="Onestic\AcmeShipping\Api\Service\Rule\SaveRulesServiceInterface" type="Onestic\AcmeShipping\Service\Rule\SaveRuleService"/>
 
     <type name="Onestic\AcmeShipping\Model\Config">
         <arguments>
@@ -17,5 +18,4 @@
             <argument name="code" xsi:type="string">acmeshipping</argument>
         </arguments>
     </type>
-
 </config>
